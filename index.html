@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Skiez</title>
   <style>
-    /* Reset et style global */
     * {
       margin: 0;
       padding: 0;
@@ -81,7 +80,7 @@
       background: #f0f0f0;
       padding: 20px;
       border-radius: 10px;
-      width: 200px;
+      width: 220px;
       transition: transform 0.3s, background 0.3s;
       cursor: pointer;
     }
@@ -92,6 +91,18 @@
 
     .project:hover, .social:hover {
       transform: translateY(-10px);
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #e67e22;
     }
 
     footer {
@@ -109,7 +120,6 @@
       font-weight: bold;
     }
 
-    /* Animation simple */
     .fade-in {
       opacity: 0;
       animation: fadeIn 1s forwards;
@@ -137,17 +147,33 @@
 
   <section id="about" class="fade-in">
     <h2>À propos</h2>
-    <p>Bienvenue sur mon portfolio ! Ici vous trouverez mes projets et mes réseaux sociaux.</p>
+    <p>Bienvenue sur mon portfolio ! Retrouvez ici mes projets vidéo et mes réseaux sociaux.</p>
   </section>
 
   <section id="projects" class="fade-in">
     <h2>Mes Projets</h2>
     <div class="projects">
-      <div class="project">Projet 1</div>
-      <div class="project">Projet 2</div>
-      <div class="project">Projet 3</div>
-      <div class="project">Projet 4</div>
-      <!-- Tu peux ajouter autant de projets que tu veux -->
+      <div class="project" onclick="window.open('https://youtu.be/BWLeOW9sYUQ','_blank')">
+        <img src="https://img.youtube.com/vi/BWLeOW9sYUQ/hqdefault.jpg" alt="Projet 1">
+        <div>Parkour fou avec Yonix</div>
+        <div class="price">Vues : 12k</div>
+      </div>
+      <div class="project" onclick="window.open('https://youtu.be/RR-F3r3NOuc','_blank')">
+        <img src="https://img.youtube.com/vi/RR-F3r3NOuc/hqdefault.jpg" alt="Projet 2">
+        <div>Défi Roue Fortnite</div>
+        <div class="price">Vues : 20k</div>
+      </div>
+      <div class="project" onclick="window.open('https://youtu.be/aPPKI12HfWY','_blank')">
+        <img src="https://img.youtube.com/vi/aPPKI12HfWY/hqdefault.jpg" alt="Projet 3">
+        <div>Vidéo de Naotyx</div>
+        <div class="price">Vues : 8k</div>
+      </div>
+      <div class="project" onclick="window.open('https://youtu.be/yourvideoID','_blank')">
+        <img src="https://img.youtube.com/vi/yourvideoID/hqdefault.jpg" alt="Projet 4">
+        <div>Votre projet ici</div>
+        <div class="price">Vues : 0</div>
+      </div>
+      <!-- Ajouter autant de projets que nécessaire -->
     </div>
   </section>
 
@@ -171,7 +197,6 @@
       toggleBtn.textContent = document.body.classList.contains('dark-mode') ? 'Mode Clair' : 'Mode Sombre';
     });
 
-    // Animation des sections
     const sections = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
